@@ -1,0 +1,81 @@
+body{
+    font-family: 'Lucida Grande', Arial,sans_serif;
+}
+div{
+    border:3px solid #ff8400;
+    border-radius: 5px;
+    width: 230px;
+    text-align: center;
+    margin: 20px auto;
+}
+
+.BV{
+    background-color: #ff8400;
+    color:white;
+    text-transform: uppercase;
+    margin-top: 0;
+    padding: 15px 0;
+}
+
+.IG{
+    color: rgba(0, 5, 255, 0.63);
+    text-transform: uppercase;
+    font-weight: normal ;
+
+}
+p{
+    font-size:45px;
+    font-weight: bold;
+    color:grey;
+    margin: 0px;
+}
+
+sub,sup{
+    font-weight:normal;
+    font-size:15px;
+    position:relative;
+
+}
+sub{
+    top:-2px;
+}
+sup{
+    top: -12px;
+    right: +3px;
+}
+ul{
+    list-style-type:none;
+    text-align: left;
+    color:darkgray;
+    padding: 0;
+    width:90%;
+    margin: 15px auto;
+
+}
+li:nth-child(odd){
+    background-color: aliceblue;
+}
+li:nth-child(even){
+    background-color: lightgray;
+}
+li{
+    padding: 5px 0 5px 60px;
+}
+li{
+    background: url("arrow.png") no-repeat;
+    background-position: 23px 3px;
+}
+a{
+    display: inline-block;
+    text-decoration:none;
+    color: WHITE;
+    text-transform: uppercase;
+    background-color:#ff8400 ;
+
+    width: 88%;
+    padding:10px 0 ;
+    margin-bottom: 20px;
+    border :1px solid #ff8400;
+    border-radius: 5px;
+    box-shadow: 0 4px 1px #6c4510;
+}
