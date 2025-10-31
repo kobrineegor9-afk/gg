@@ -1,15 +1,20 @@
-body{
+
+
+.price{
     font-family: 'Lucida Grande', Arial,sans_serif;
+    text-align: center;
+    width: 90%;
 }
-div{
+.price div{
     border:3px solid #ff8400;
     border-radius: 5px;
     width: 230px;
     text-align: center;
     margin: 20px auto;
+    display: inline-block;
 }
 
-.BV{
+.price BV{
     background-color: #ff8400;
     color:white;
     text-transform: uppercase;
@@ -17,33 +22,33 @@ div{
     padding: 15px 0;
 }
 
-.IG{
+.price IG{
     color: rgba(0, 5, 255, 0.63);
     text-transform: uppercase;
     font-weight: normal ;
 
 }
-p{
+.price p{
     font-size:45px;
     font-weight: bold;
     color:grey;
     margin: 0px;
 }
 
-sub,sup{
+.price sub,sup{
     font-weight:normal;
     font-size:15px;
     position:relative;
 
 }
-sub{
+.price sub{
     top:-2px;
 }
-sup{
+.price sup{
     top: -12px;
     right: +3px;
 }
-ul{
+.price ul{
     list-style-type:none;
     text-align: left;
     color:darkgray;
@@ -52,20 +57,20 @@ ul{
     margin: 15px auto;
 
 }
-li:nth-child(odd){
+.price li:nth-child(odd){
     background-color: aliceblue;
 }
-li:nth-child(even){
+.price li:nth-child(even){
     background-color: lightgray;
 }
-li{
+.price li{
     padding: 5px 0 5px 60px;
 }
-li{
-    background: url("arrow.png") no-repeat;
+.price li{
+    background: url("../arrow.png") no-repeat;
     background-position: 23px 3px;
 }
-a{
+.price a{
     display: inline-block;
     text-decoration:none;
     color: WHITE;
