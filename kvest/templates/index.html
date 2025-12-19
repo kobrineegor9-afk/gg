@@ -2,15 +2,30 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Hello</title>
 </head>
 <body>
-    <p> start?</p>
-    <a href ="{{url_for('quest', step = 0, choice = 0)}}">
-        <img src ="/static/img/yes.jpg" width = '64' height = '64' alt = 'yes'>
-    </a>
-    <a href = "#">
-        <img src ="/static/img/no.jpg" width = '64' height = '64' alt = 'no'>
-    </a>
+    <p> hello world</p>
+    <p>this is my first project</p>
+<!--    {% for user in users %}-->
+    <p>my name is {{name}}</p>
+<!--    <p> i am {{user.age}} years old</p>-->
+<!--    {% endfor %}-->
+
+
+<!--    {% for user in users %}-->
+<!--    {% if user.age >10 %}-->
+    <p>пользователь {{name}}</p>
+<!--    {% endif %}-->
+<!--    {% endfor %}-->
+
+
+<h4>Task 1</h4>
+    {set x,y = 3,2 %}
+    {{(x**2+(y-6)/2.1*1.2)round(2)}}
+    <p></p>
+
+    <img src ="{{url_for('static', filename='1.png')}}">
+    <p><a href = "{{url_for('page_p1')}}">обо мне</a></p>
 </body>
 </html>

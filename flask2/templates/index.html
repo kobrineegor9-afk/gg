@@ -2,13 +2,76 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel ='stylesheet' href ="{{url_for('static', filename = 'css/style.css')}}">
-    <title>hello</title>
+    <title>Hello</title>
 </head>
 <body>
-<p>hello world!</p>
-<p>this is my first  project</p>
-<img src ="{{url_for('static', filename ='img/1.png')}}" alt = 'img' Width = '240' Hieght = '240'>
-<p><a href="{{url_for('page_p1')}}">обо мне</a><p>
+    <p> hello world</p>
+    <p>this is my first project</p>
+<!--    {% for user in users %}-->
+    <p>my name is {{name}}</p>
+<!--    <p> i am {{user.age}} years old</p>-->
+<!--    {% endfor %}-->
+
+
+<!--    {% for user in users %}-->
+<!--    {% if user.age >10 %}-->
+    <p>пользователь {{name}}</p>
+<!--    {% endif %}-->
+<!--    {% endfor %}-->
+
+
+<!--<h4>Task 1</h4>-->
+<!--    {% set x,y = 3,2 %}-->
+<!--    {{(x**2+(y-6)/2.1*1.2)}}-->
+<!--    <p>Task 2</p>-->
+<!--    {% set a,b=5,1 %}-->
+<!--    {% set c = a-b %}-->
+<!--    {{'{:.1%}'.format(c//3) }}-->
+    <p>Task 3</p>
+    {% set a,b = 25,76 %}
+    {% if b >= 60 %}
+        {% set a,b= a + b//60, b%60 %}
+    {% endif %}
+    {% if a >=24 %}
+        {% set a = a%24 %}
+    {% endif %}
+    {% if b == 0 %}
+        Ровно{{a}}
+    {% elif b  == 30 %}
+        Половина{{a +1 }}
+    {% elif  b == 15 %}
+        начало{{a+1}}
+    {% elif  b == 45 %}
+        без 15-ти{{a+1}}
+    {% else  %}
+        {{a}} часов {{b}} минуты
+
+
+    {% endif %}
+
+    <p>task 4</p>
+    {% set a, b = 1,1 %}
+    {% set c = 'который ' %}
+    {% if 'кот' in c and b == 0 %}
+        на 0 делить можно мяу
+    {% elif 'кот' in c %}
+        очевидный подсчет
+    {% elif 'кот' == c %}
+        шредингера
+    {% else %}
+        {% if c == '/' and b == 0 %}
+        ошибка
+        {% else %}
+            {{a}}{{c}}{{b}}
+        {% endif %}
+    {% endif %}
+
+
+
+
+
+
+    <img src ="{{url_for('static', filename='1.png')}}">
+    <p><a href = "{{url_for('page_p1')}}">обо мне</a></p>
 </body>
 </html>
