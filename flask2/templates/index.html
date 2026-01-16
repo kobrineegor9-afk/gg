@@ -27,44 +27,171 @@
 <!--    {% set a,b=5,1 %}-->
 <!--    {% set c = a-b %}-->
 <!--    {{'{:.1%}'.format(c//3) }}-->
-    <p>Task 3</p>
-    {% set a,b = 25,76 %}
-    {% if b >= 60 %}
-        {% set a,b= a + b//60, b%60 %}
-    {% endif %}
-    {% if a >=24 %}
-        {% set a = a%24 %}
-    {% endif %}
-    {% if b == 0 %}
-        Ровно{{a}}
-    {% elif b  == 30 %}
-        Половина{{a +1 }}
-    {% elif  b == 15 %}
-        начало{{a+1}}
-    {% elif  b == 45 %}
-        без 15-ти{{a+1}}
-    {% else  %}
-        {{a}} часов {{b}} минуты
+<!--    <p>Task 3</p>-->
+<!--    {% set a,b = 25,76 %}-->
+<!--    {% if b >= 60 %}-->
+<!--        {% set a,b= a + b//60, b%60 %}-->
+<!--    {% endif %}-->
+<!--    {% if a >=24 %}-->
+<!--        {% set a = a%24 %}-->
+<!--    {% endif %}-->
+<!--    {% if b == 0 %}-->
+<!--        Ровно{{a}}-->
+<!--    {% elif b  == 30 %}-->
+<!--        Половина{{a +1 }}-->
+<!--    {% elif  b == 15 %}-->
+<!--        начало{{a+1}}-->
+<!--    {% elif  b == 45 %}-->
+<!--        без 15-ти{{a+1}}-->
+<!--    {% else  %}-->
+<!--        {{a}} часов {{b}} минуты-->
 
 
-    {% endif %}
+<!--    {% endif %}-->
 
-    <p>task 4</p>
-    {% set a, b = 1,1 %}
-    {% set c = 'который ' %}
-    {% if 'кот' in c and b == 0 %}
-        на 0 делить можно мяу
-    {% elif 'кот' in c %}
-        очевидный подсчет
-    {% elif 'кот' == c %}
-        шредингера
-    {% else %}
-        {% if c == '/' and b == 0 %}
-        ошибка
-        {% else %}
-            {{a}}{{c}}{{b}}
-        {% endif %}
-    {% endif %}
+<!--    <p>task 4</p>-->
+<!--    {% set a, b = 1,1 %}-->
+<!--    {% set c = 'который ' %}-->
+<!--    {% if 'кот' in c and b == 0 %}-->
+<!--        на 0 делить можно мяу-->
+<!--    {% elif 'кот' in c %}-->
+<!--        очевидный подсчет-->
+<!--    {% elif 'кот' == c %}-->
+<!--        шредингера-->
+<!--    {% else %}-->
+<!--        {% if c == '/' and b == 0 %}-->
+<!--        ошибка-->
+<!--        {% else %}-->
+<!--            {{a}}{{c}}{{b}}-->
+<!--        {% endif %}-->
+<!--    {% endif %}-->
+
+<!--    {% set count = [0]%}-->
+<!--    <table boreder = '3'>-->
+<!--        {%for i in['не','устану','уставать']%}-->
+<!--        <tr>-->
+<!--            <td>-->
+<!--                {{loop.index}}-->
+<!--            </td>-->
+<!--            <td>-->
+<!--                {{i}}-->
+<!--            </td>-->
+<!--            {% if  i in 'неустанууставать' %}-->
+<!--            {%count.append(count.pop()+1) %}{%endif %}-->
+<!--            {%endif %}-->
+<!--        </tr>-->
+<!--        {%if count[0]==3 %}-->
+<!--        как девиз жизни-->
+<!--        {%endif %}-->
+<!--    </table>-->
+    <br>
+        {%set size = 3 %}
+        {%for i in range(0,size) %}
+        <p>
+            {%{for j in range(1, size+1)%}
+                {{j + i * size}}
+            {%endfor %}
+        </p>
+
+        {%endfor %}
+
+    <br>
+    {%set size, array= 10,[] %}
+    {%for i in range (0,size) %}
+    {%set ar = [] %}
+    {% for j in range (0, size)%}
+    {% if i==j%}
+        {% set_ = ar.append(1)%}
+    {%else%}
+        {% set _ = ar.append(0)%}
+    {%endif%}
+   {%endfor%}
+   {% set _ = array.append(ar)%}
+{%endfor %}
+
+
+{%for i in range(0,size) %}
+    <p>
+        {% for j in range(0,size)%}
+        {{array[i][j]}}
+        {%endfor%}
+    </p>
+    {%endfor%}
+
+    <br>
+    {% macro to_be_or_not_to_be()%}
+        {% set x =range(0,2)|random%}
+        {% if x == 1 %}
+            быть
+        {%else%}
+            не быть
+        {%endif%}
+    {%endmacro%}
+
+    <br>
+    {% set sum_e = [0]%}
+    {%macro get_sum_e()%}
+        {%for value in varargs%}
+            {% if sum_e.append(sum_e.pop()+value['m']+value['c']**2%)}
+            {%endif%}
+        {%endfor%}
+        {{sum_e[0]}}
+    {%endmacro%}
+
+    {%set a,b,c = {'m':3, 'c':5%},{'m':1, 'c':3},{'m':7,'c':1}%}
+    {{get_sum_e(a,b,c)}}
+
+    <br>
+    {%set size = 10%}
+    <table border = '1'>
+        <tr>
+        {% for j in range (1,size+1)%}
+            <td>{{ i * j }}</td>
+        {%endfor%}
+        </tr>
+    {% endfor %}
+    </table>
+
+
+    <br>
+    {%set size = 8%}
+    <table>
+        {%for i in range(size)%}
+        <tr>
+            {% for j in range (size)%}
+                {% if  (i+J)%2 == 0%}
+                    <td class='white'></td>
+                {%else%}
+                    <td class=" black"></td>
+                {%endif%}
+            {%endfor%}
+        </tr>
+      {%endfor%}
+    </table>
+
+    <br>
+    {%set size = 7%}
+    {%set triangle  = [[1]]%}
+    {%for i in range(1, size)%}
+        {%set row  = [1]%}
+        {%for j in range(1,i)%}
+            {%set value = triangle[i-1][j-1]+triangle[i-1][j]%}
+            {%set _ = row.append(value)%}
+        {%endfor%}
+        {%set _ = row.append(1)%}
+        {% set _ = triangle.append(row)%}
+    {%endfor%}
+    {%for row in triangle%}
+        <div style = 'text-align: center;'>
+                {%for n in row%}
+            <span style = 'display:inline-block; width: 50px;'>
+                  {{n}}
+            </span>
+          {%endfor%}
+        </div>
+    {%endfor%}
+
+
 
 
 
